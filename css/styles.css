@@ -1,4 +1,28 @@
 body {
-    background-color: red;
-    color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sketchPad {
+    display: flex;
+    flex-direction: column;
+    margin-top: 48px;
+    height: 500px;
+    width: 500px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.pad {
+    display: flex;
+    background-color: blue;
+    flex: 1;
+    border: solid black 1px;
+}
+
+.newpad {
+    background-color: green;
+    flex: 1;
+    border: solid black 1px;
 }
