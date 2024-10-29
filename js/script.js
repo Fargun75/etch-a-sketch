@@ -11,9 +11,9 @@ for (i = 0; i < 4; i++) {
     sketchPad.appendChild(element);
 }
 
+function hovered(e) {
+    e.target.classList.add('touched');
 
-function clicked() {
-    console.log("I was clicked");
 }
 const hover = document.querySelectorAll('.newpad');
-hover.forEach((pad) => pad.addEventListener('click', clicked));
+hover.forEach((pad) => pad.addEventListener('mouseover', hovered));
