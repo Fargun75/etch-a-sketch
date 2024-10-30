@@ -3,9 +3,13 @@ function hovered(e) {
 }
 
 function changeSize() {
-    let userInput = prompt("How many square per side (max 100)?");
-    sketchPad.textContent = "";
-    makeGrid(userInput);
+    let userInput = prompt("How many squares per side (max 100)?");
+    if (userInput > 100) {
+        userInput = prompt("Too high input - try again. Max 100");
+    } else {
+        sketchPad.textContent = "";
+        makeGrid(userInput);
+    }
 }
 
 function makeGrid(userInput) {
