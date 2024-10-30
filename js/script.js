@@ -1,11 +1,7 @@
-function hovered(e) {
-    e.target.classList.add('touched');
-}
-
 function changeSize() {
-    let userInput = prompt("How many squares per side (max 100)?");
+    let userInput = prompt("How many squares per side (max 100)?", 16);
     if (userInput > 100) {
-        userInput = prompt("Too high input - try again. Max 100");
+        userInput = prompt("Too high input - try again. Max 100", 16);
     } else {
         sketchPad.textContent = "";
         makeGrid(userInput);
@@ -24,7 +20,21 @@ function makeGrid(userInput) {
         sketchPad.appendChild(element);
     }
     const hover = document.querySelectorAll('.newpad');
-    hover.forEach((pad) => pad.addEventListener('mouseover', hovered));
+    hover.forEach((pad) => pad.addEventListener('mouseover', changeColor));
+}
+
+function getRandomColor() {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function changeColor(e) {
+    let color = getRandomColor();
+    this.style.backgroundColor = color;
 }
 
 let sketchPad = document.querySelector('.sketchPad');
