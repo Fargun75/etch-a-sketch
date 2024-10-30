@@ -27,7 +27,7 @@ let sketchPad = document.querySelector('.sketchPad');
 let gridSize = document.querySelector('#size');
 gridSize.addEventListener('click', changeSize);
 
-makeGrid(4);
+makeGrid(16);
 
 
 
