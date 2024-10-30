@@ -28,10 +28,6 @@ body {
     border: solid black 0.1px;
 }
 
-.touched {
-    background-color: #9A7E6F;
-}
-
 #size {
     padding: 10px 40px;
     margin-top: 16px;
