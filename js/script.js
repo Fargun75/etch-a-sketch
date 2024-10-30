@@ -1,29 +1,14 @@
-let sketchPad = document.querySelector('.sketchPad');
-
-for (i = 0; i < 4; i++) {
-    let element = document.createElement('div');
-    element.classList.add('pad');
-    for (j = 0; j < 4; j++) {
-        let newPad = document.createElement('div');
-        newPad.classList.add('newpad');
-        element.appendChild(newPad);
-    }
-    sketchPad.appendChild(element);
-}
-
 function hovered(e) {
     e.target.classList.add('touched');
-
 }
-const hover = document.querySelectorAll('.newpad');
-hover.forEach((pad) => pad.addEventListener('mouseover', hovered));
 
-
-let gridSize = document.querySelector('#size');
-gridSize.addEventListener('click', changeSize);
 function changeSize() {
     let userInput = prompt("How many square per side (max 100)?");
     sketchPad.textContent = "";
+    makeGrid(userInput);
+}
+
+function makeGrid(userInput) {
     for (i = 0; i < userInput; i++) {
         let element = document.createElement('div');
         element.classList.add('pad');
@@ -37,5 +22,18 @@ function changeSize() {
     const hover = document.querySelectorAll('.newpad');
     hover.forEach((pad) => pad.addEventListener('mouseover', hovered));
 }
+
+let sketchPad = document.querySelector('.sketchPad');
+let gridSize = document.querySelector('#size');
+gridSize.addEventListener('click', changeSize);
+
+makeGrid(4);
+
+
+
+
+
+
+
 
 
